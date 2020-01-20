@@ -1,0 +1,46 @@
+#container {
+    display: grid;
+    grid-template-areas: 'level level' 'objects sidebar';
+}
+
+#level {
+    grid-area: level;
+}
+
+#objects {
+    grid-area: objects;
+}
+
+#sidebar {
+    grid-area: sidebar;
+}
+
+div {
+    background-size: 100% 100% !important;
+}
+
+#container > div {
+    border: 1px solid black;
+}
+#level > div {
+    outline: 1px solid black;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+}
+
+#sidebar > div {
+    outline: 1px solid black;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#sidebar > div:not(:first-child) {
+    margin-left: 2px;
+}
+
+img {
+    width: 32px;
+    height: 32px;
+}

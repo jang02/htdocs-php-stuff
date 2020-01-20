@@ -1,0 +1,51 @@
+#container {
+    width: 1580px;
+    margin: 0px auto;
+}
+#header {
+    background-color: aqua;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+#first {
+    font-size: 50px;
+    line-height: 50px;
+}
+#second {
+    font-size: 35px;
+    line-height: 35px;
+}
+
+#menu {
+    background-color: #9becec;
+    padding: 5px 0px;
+    text-align: center;
+    border-top: white solid 1px;
+}
+ul {
+    list-style: none;
+    margin: 0px;
+}
+
+li {
+    display: inline-block;
+}
+a {
+    text-decoration: none;
+    padding: 5px 10px;
+    background-color: #7bdede;
+}
+a:hover {
+    background-color: #a5dada;
+}
+#footer {
+    background-color: aqua;
+    text-align: center;
+    padding: 15px 0px;
+    font-style: italic;
+    margin-top: 50px;
+}
+#lab1, #lab2, #lab4, #weekopdracht {
+    display: none;
+}

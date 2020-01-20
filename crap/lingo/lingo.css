@@ -1,0 +1,85 @@
+#gamecontainer {
+	width: 640px;
+	height: 640px;
+	margin: 0px auto;
+	display: grid;
+	grid-template-areas:
+	'row1'
+	'row2'
+	'row3'
+	'row4'
+	'row5';
+}
+
+#inputcontainer {
+	width: 640px;
+	height: 30px;
+	margin: 0px auto;
+	display: grid;
+	grid-template-areas:
+	'input button';	
+}
+
+.playboard {
+	margin: 10px;
+	vertical-align: top;
+	text-align: center;
+	border: solid black 2px;
+	background-color: white;
+	height: 100px;
+	width: 100px;
+	display: inline-block;
+}
+
+.row1 {
+	height: 110px;
+	width: 750px;
+	grid-area: row1;
+}
+
+.row2 {
+	height: 110px;
+	width: 750px;
+	grid-area: row2;
+}
+
+.row3 {
+	max-height: 110px;
+	width: 750px;
+	grid-area: row3;
+}
+
+.row4 {
+	height: 110px;
+	width: 750px;
+	grid-area: row4;
+}
+
+.row5 {
+	height: 110px;
+	width: 750px;
+	grid-area: row5;
+}
+
+p {
+	margin: 10px 0px 0px 0px;
+	font-size: 65px;
+}
+
+input[type="text"] {
+    width: 380px;
+    height: 20px;
+}
+
+#check {
+    height: 26px;
+    width: 220px;
+}
+
+.yellow {
+	background-color: yellow;
+}
+
+.green {
+	background-color: green;
+}
