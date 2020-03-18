@@ -1,0 +1,17 @@
+.movename{
+    float: left;
+}
+.list-group{
+    text-align: center;
+
+}
+.movetype{
+    float: right;
+}
+.movedamage{
+    float: right;
+}
+.card{
+    display: inline-block;
+    margin: 15px;
+}
