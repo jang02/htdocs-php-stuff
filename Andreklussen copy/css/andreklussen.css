@@ -1,0 +1,38 @@
+#wip-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#wip-text{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.footer{
+    color: #133c6b;
+    text-align: center;
+    font-weight: bold;
+    position: relative;
+    background-color: #e3f2fd;
+}
+.footer-text{
+    padding: 0px;
+    margin: 0px;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    background-color: #b4d2fc;
+}
+.wrapper {
+    min-height: 100%;
+
+    margin-bottom: -50px;
+}
+.footer,
+.push {
+    height: 50px;
+}
