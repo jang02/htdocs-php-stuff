@@ -1,9 +1,10 @@
 nav{
     background-color: #e3f2fd;
 }
+
 nav > div > ul{
     margin: 0px;
-    padding: 0px;
+    padding-top: 2em;
 
     font-weight: bold;
     float:right;
@@ -23,6 +24,7 @@ nav > div > ul > li > a:hover{
     text-decoration: none;
     color: inherit;
 }
+
 div.navCont{
     max-width: 1000px;
     margin: 0px auto;
@@ -31,28 +33,62 @@ div.navCont > ul{
     display: block;
     text-align: right;
 }
-div.navCont > img{
+#logo{
     width: auto;
     height: 75px;
+    margin: 0px auto;
 }
-html, body {
-    height: 100%;
-    margin: 0;
+.footer{
+    color: #133c6b;
+    text-align: center;
+    font-weight: bold;
+    position: relative;
+    background-color: #e3f2fd;
+}
+.footer-text{
+    padding: 0px;
+    margin: 0px;
+}
+#container{
+    width: 1000px;
+    text-align: center;
+    margin: 50px auto 50px auto;
+}
+.item {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+.slider-text{
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    line-height: 0px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.info {
+    display: inline-block;
+    width: 300px;
+    margin-top: 0px;
+    vertical-align: top;
 }
 
-#wrapper{
-    min-height: 93%;
+.info > p {
+    margin: 0px;
 }
-footer{
-    text-align: center;
-    align-items: center;
-    display: flex;
-    background-color: #e3f2fd;
-    height: 7%;
-    color: #133c6b;
-    font-weight: bold;
+
+html, body {
+    height: 100%;
+    background-color: #afd2ff;
+    margin: 0;
 }
-footer > p{
-    line-height: 0px;
-    margin: 0px auto;
+.wrapper {
+    min-height: 100%;
+    margin-bottom: -50px;
+}
+.footer,
+.push {
+    height: 50px;
 }

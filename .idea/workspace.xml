@@ -36,7 +36,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -68,6 +68,13 @@
       <workItem from="1583434908381" duration="3750000" />
       <workItem from="1583764030277" duration="71000" />
       <workItem from="1584531779495" duration="11823000" />
+      <workItem from="1584554896912" duration="752000" />
+      <workItem from="1584615195315" duration="4786000" />
+      <workItem from="1584644372302" duration="1007000" />
+      <workItem from="1584717956938" duration="159000" />
+      <workItem from="1584718130135" duration="78000" />
+      <workItem from="1584719452025" duration="243000" />
+      <workItem from="1584719704592" duration="296000" />
     </task>
     <servers />
   </component>
@@ -79,10 +86,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="268" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1583351835970" />
-    <state x="740" y="276" key="FileChooserDialogImpl" timestamp="1583764099223">
+    <state x="740" y="276" key="FileChooserDialogImpl" timestamp="1584718204568">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1583764099223" />
+    <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1584718204568" />
     <state x="715" y="335" key="NewPhpClassDialog" timestamp="1584534263745">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -92,15 +99,19 @@
     </state>
     <state x="794" y="444" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1584532923815" />
     <state x="2714" y="444" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1582581033081" />
-    <state x="461" y="163" key="SettingsEditor" timestamp="1580080339154">
+    <state x="461" y="163" key="SettingsEditor" timestamp="1584718115495">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="163" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1580080339154" />
-    <state x="661" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1583764062052">
+    <state x="461" y="163" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1584718115495" />
+    <state x="661" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1584718177593">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="661" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1583764062052" />
+    <state x="661" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1584718177593" />
     <state x="2581" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1583434911356" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1584617422326">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1584617422326" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1584539367086">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
