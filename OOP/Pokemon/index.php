@@ -4,23 +4,32 @@ require 'Classes/Type.php';
 require 'Classes/Move.php';
 require 'Classes/Pokemon.php';
 
-$chimchar = new Pokemon('Chimchar', 'Chimchar', 10, 44, 90, [
+$chimchar = new Pokemon('Monferno', 'Jesse', 100, 44, 90, 80, [
     new Move('Ember', 40, Type::FIRE),
     new Move('Scratch', 40, Type::NORMAL),
     new Move('Flame Wheel', 60, Type::FIRE),
     new Move('Acrobatics', 55, Type::FLYING)
     ], [Type::FIRE]);
 
-$scyther = new Pokemon('Scyther', 'Jer', 10, 70, 90, [
+$scyther = new Pokemon('Scyther', 'Scyther', 100, 70, 90, 80, [
     new Move('False Swipe', 40, Type::NORMAL),
     new Move('Quick Attack', 40, Type::NORMAL),
     new Move('Air Slash', 75, Type::FLYING),
     new Move('X-Scissor', 80, Type::BUG)
 ], [Type::BUG, Type::FLYING]);
 
+$pkmnjer = new Pokemon('Houndoom', 'Jer', 100, 120, 100, 80, [
+    new Move('Hyper Beam', 90, Type::NORMAL),
+    new Move('Foul Play', 95, Type::DARK),
+    new Move('Inferno', 100, Type::FIRE),
+    new Move('Crunch', 80, Type::DARK)
+], [Type::DARK, Type::FIRE]);
 
 
-$bag = [$chimchar, $scyther];
+
+$bag = [$chimchar, $scyther, $pkmnjer];
+
+
 
 
 ?>
@@ -45,7 +54,7 @@ $bag = [$chimchar, $scyther];
                     <p class="card-text"><?php foreach($pok->types as $type){
                         echo $type[0].' ';
                         }
-                        echo '<br> Health: <span class="movedamage">'.$pok->health.'</span><br>Attack: <span class="movedamage">'.$pok->attack.'<br>' ?></span></p>
+                        echo '<br> Health: <span class="movedamage">'.$pok->health.'</span><br>Attack: <span class="movedamage">'.$pok->attack.'<br></span><br>Defence: <span class="movedamage">'.$pok->defence.'<br>' ?></span></p>
                 </div>
                 <ul class="list-group list-group-flush">
                     <?php foreach($pok->moves as $move){

@@ -10,17 +10,21 @@ public $level;
 public $name;
 public $health;
 public $attack;
+public $defence;
 public $moves = [];
 public $types = [];
 
-    public function __construct($pokemon, $name, $level, $max_health, $attack, $moves, $types){
+
+    public function __construct($pokemon, $name, $level, $max_health, $attack, $defence, $moves, $types){
         $this->pokemon = $pokemon;
         $this->name = $name;
         $this->level = $level;
         $this->health = $this->statFormula($max_health, 0, true);
         $this->attack = $this->statFormula($attack, 0);
+        $this->defence = $this->statFormula($defence, 0);
         $this->moves = $moves;
         $this->types = $types;
+        $this->alive = true;
         $this->url = 'https://img.pokemondb.net/artwork/' . strtolower($pokemon) . '.jpg';
     }
 
@@ -32,6 +36,11 @@ public $types = [];
         echo $this->alive;
         echo $this->health;
     }
+
+    public function setHealth($hp){
+        $this->health = $hp;
+    }
+
 
     public function attack(){
 
