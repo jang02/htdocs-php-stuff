@@ -25,12 +25,9 @@ $pkmnjer = new Pokemon('Houndoom', 'Jer', 100, 120, 100, 80, [
     new Move('Crunch', 80, Type::DARK)
 ], [Type::DARK, Type::FIRE]);
 
-
-
 $bag = [$chimchar, $scyther, $pkmnjer];
 
-
-
+$chimchar->attack();
 
 ?>
 <!DOCTYPE html>

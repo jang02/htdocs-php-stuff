@@ -43,7 +43,11 @@ public $types = [];
 
 
     public function attack(){
-
+        /*
+        door de types loopen en dan de power aan de hand daarvan aanpassen.
+        aan de hand van de power de HP bij de aangevalde pokemon eraf halen.
+        loggen hoeveel damage er bij welke pokemon is gedaan.
+        */
     }
 
     private function statFormula($basestat, int $iv, bool $health = false): int {
