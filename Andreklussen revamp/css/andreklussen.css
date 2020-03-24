@@ -92,3 +92,12 @@ html, body {
 .push {
     height: 50px;
 }
+.gallery img{
+    transition: 1s;
+    margin: 15px;
+    height: 250px;
+    width: 300px;
+}
+.gallery img:hover{
+    transform: scale(1.1);
+}
