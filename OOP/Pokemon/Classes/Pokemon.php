@@ -19,9 +19,9 @@ public $types = [];
         $this->pokemon = $pokemon;
         $this->name = $name;
         $this->level = $level;
-        $this->health = $this->statFormula($max_health, 0, true);
-        $this->attack = $this->statFormula($attack, 0);
-        $this->defence = $this->statFormula($defence, 0);
+        $this->health = $this->statFormula($max_health,true);
+        $this->attack = $this->statFormula($attack);
+        $this->defence = $this->statFormula($defence);
         $this->moves = $moves;
         $this->types = $types;
         $this->alive = true;
@@ -41,26 +41,57 @@ public $types = [];
         $this->health = $hp;
     }
 
+    public function attack($move, $enemy){
+        $power = $move->power;
+        $movetype = $move->type;
+        for ($i = 0; $i < sizeof($enemy->types); $i++){
+            if(in_array($enemy->types[$i], $movetype[1])){
+                $power *= 2;
+            }
+            else if(in_array($enemy->types[$i], $movetype[2])){
+                $power *= 0.5;
+            }
+            else if(in_array($enemy->types[$i], $movetype[3])){
+                $power *= 0;
+            }
+        }
 
-    public function attack(){
-        /*
-        door de types loopen en dan de power aan de hand daarvan aanpassen.
-        aan de hand van de power de HP bij de aangevalde pokemon eraf halen.
-        loggen hoeveel damage er bij welke pokemon is gedaan.
-        */
+        $damage = $power * ($this->attack / $enemy->defence);
+        $damage = round($damage, 0);
+
+        if($enemy->alive && $this->alive){
+            if($damage > 1000){
+                echo "Cheating damage stat found!";
+            }
+            else{
+                echo '<br><span style="color: #00bf00">'.$this->name . ' ('.$this->pokemon.')</span> attacked <span style="color: red">'.$enemy->name.
+                    ' ('.$enemy->pokemon.')</span> using '.$move->name. ' and did <span style="color: #00bfbf;">'.$damage.'</span> damage!';
+                $enemy->setHealth($enemy->health -= $damage);
+                if($enemy->health <= 0){
+                    echo '<br><span style="color: red">'.$enemy->name.' ('.$enemy->pokemon .')</span> fainted! <span style="color: #00bf00">'.$this->name . ' ('.$this->pokemon.')</span> has won the battle!';
+                    $enemy->setHealth(0);
+                    $enemy->alive = false;
+                }
+                else{
+                    echo '<br><span style="color: red">'.$enemy->name . ' ('.$enemy->pokemon.')</span> has '.$enemy->health. 'HP left!';
+                }
+            }
+            echo "<br>";
+        }
     }
 
-    private function statFormula($basestat, int $iv, bool $health = false): int {
+    private function statFormula($basestat, bool $health = false): int {
         $stat = $basestat;
+        $iv = rand(0, 32);
         $ev = 0;
         if ($health) {
             return floor(
-                    (2 * $stat + 32 + floor(sqrt($ev) / 4)) * $this->level / 100
+                    (2 * $stat + $iv + floor(sqrt($ev) / 4)) * $this->level / 100
                 ) + $this->level + 10;
         }
         return floor(
             (
-                floor((2 * $stat + 32 + floor(sqrt($ev) / 4)) * $this->level / 100) + 5
+                floor((2 * $stat + $iv + floor(sqrt($ev) / 4)) * $this->level / 100) + 5
             ));
     }
 
