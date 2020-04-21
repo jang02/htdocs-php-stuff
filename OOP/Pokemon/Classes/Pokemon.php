@@ -40,40 +40,41 @@ public $types = [];
     public function setHealth($hp){
         $this->health = $hp;
     }
+    public function getHealth(){
+        return $this->health;
+    }
+
 
     public function attack($move, $enemy){
-        $power = $move->power;
         $movetype = $move->type;
+        $damage = (($this->level / 5 + 2) * $move->power * $this->attack / $enemy->defence) / 50 + 2;
         for ($i = 0; $i < sizeof($enemy->types); $i++){
             if(in_array($enemy->types[$i], $movetype[1])){
-                $power *= 2;
+                $damage *= 2;
             }
             else if(in_array($enemy->types[$i], $movetype[2])){
-                $power *= 0.5;
+                $damage *= 0.5;
             }
             else if(in_array($enemy->types[$i], $movetype[3])){
-                $power *= 0;
+                $damage *= 0;
             }
         }
 
-        $damage = $power * ($this->attack / $enemy->defence);
         $damage = round($damage, 0);
 
-        if($enemy->alive && $this->alive){
-            if($damage > 1000){
+        if ($enemy->alive && $this->alive) {
+            if ($damage > 1000) {
                 echo "Cheating damage stat found!";
-            }
-            else{
-                echo '<br><span style="color: #00bf00">'.$this->name . ' ('.$this->pokemon.')</span> attacked <span style="color: red">'.$enemy->name.
-                    ' ('.$enemy->pokemon.')</span> using '.$move->name. ' and did <span style="color: #00bfbf;">'.$damage.'</span> damage!';
+            } else {
+                echo '<br><span style="color: #00bf00">' . $this->name . ' (' . $this->pokemon . ')</span> attacked <span style="color: red">' . $enemy->name .
+                    ' (' . $enemy->pokemon . ')</span> using ' . $move->name . ' and did <span style="color: #00bfbf;">' . $damage . '</span> damage!';
                 $enemy->setHealth($enemy->health -= $damage);
-                if($enemy->health <= 0){
-                    echo '<br><span style="color: red">'.$enemy->name.' ('.$enemy->pokemon .')</span> fainted! <span style="color: #00bf00">'.$this->name . ' ('.$this->pokemon.')</span> has won the battle!';
+                if ($enemy->getHealth() <= 0) {
+                    echo '<br><span style="color: red">' . $enemy->name . ' (' . $enemy->pokemon . ')</span> fainted! <span style="color: #00bf00">' . $this->name . ' (' . $this->pokemon . ')</span> has won the battle!';
                     $enemy->setHealth(0);
                     $enemy->alive = false;
-                }
-                else{
-                    echo '<br><span style="color: red">'.$enemy->name . ' ('.$enemy->pokemon.')</span> has '.$enemy->health. 'HP left!';
+                } else {
+                    echo '<br><span style="color: red">' . $enemy->name . ' (' . $enemy->pokemon . ')</span> has ' . $enemy->health . 'HP left!';
                 }
             }
             echo "<br>";

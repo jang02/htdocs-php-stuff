@@ -3,6 +3,7 @@
 require 'Classes/Type.php';
 require 'Classes/Move.php';
 require 'Classes/Pokemon.php';
+require 'Classes/Pikachu.php';
 
 $chimchar = new Pokemon(
     'Chimchar', 'Jesse', 10, 44, 90, 80,
@@ -34,15 +35,15 @@ $pkmnjer = new Pokemon(
     ],
     ['Dark', 'Ghost']);
 
-$pikachu = new Pokemon(
-    'Pikachu', 'Pikachu', 10, 60, 80, 80,
+$pikachu = new Pikachu(
+    'Pikachu', 'Hansje', 5, 35, 55, 40,
     [
         new Move('Electric Ring', 50, Type::ELECTRIC),
         new Move('Pika Punch', 20, Type::NORMAL)
     ],
-    ['Electric']);
+    ['Electric'], 30);
 $charmeleon = new Pokemon(
-    'Charmeleon', 'Charmeleon', 10, 60, 80, 80,
+    'Charmeleon', 'Charmeleon', 5, 58, 64, 58,
     [
         new Move('Head Butt', 10, Type::NORMAL),
         new Move('Flare', 30, Type::FIRE)
@@ -52,7 +53,7 @@ $custompokes = [$chimchar, $scyther, $pkmnjer];
 
 $bag = [$pikachu, $charmeleon];
 
-
+echo $pikachu->voltage;
 
 
 ?>
@@ -68,8 +69,38 @@ $bag = [$pikachu, $charmeleon];
 <body>
 
     <div class="container">
-
         <?php foreach($bag as $pok) {  ?>
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" style="height: 350px; width: 100%" src="<?php echo $pok->url?>" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title"><?php echo $pok->name.' ('.$pok->pokemon.') '.$pok->level;?></h5>
+                    <p class="card-text"><?php foreach($pok->types as $type){
+                            echo $type.' ';
+                        }
+                        echo '<br> Health: <span class="movedamage">'.$pok->health.'</span><br>Attack: <span class="movedamage">'.$pok->attack.'<br></span><br>Defence: <span class="movedamage">'.$pok->defence.'<br>' ?></span></p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <?php foreach($pok->moves as $move){
+                        echo '<li class="list-group-item"><span class="movename">'.$move->name.'</span> <span class="movetype">'.
+                            $move->type[0].'</span> <span class="movedamage">'.
+                            $move->power.
+
+                            '</span></li>';
+                    } ?>
+                </ul>
+            </div>
+
+        <?php
+        }
+
+        $pikachu->attack($pikachu->moves[0], $charmeleon);
+        $charmeleon->attack($charmeleon->moves[1], $pikachu);
+
+
+
+
+
+        foreach($custompokes as $pok) {  ?>
             <div class="card" style="width: 18rem;">
                 <img class="card-img-top" style="height: 350px; width: 100%" src="<?php echo $pok->url?>" alt="Card image cap">
                 <div class="card-body">
@@ -91,11 +122,6 @@ $bag = [$pikachu, $charmeleon];
             </div>
 
         <?php }
-
-
-
-        $pikachu->attack($pikachu->moves[0], $charmeleon);
-        $charmeleon->attack($charmeleon->moves[1], $pikachu);
 
         ?>
 
